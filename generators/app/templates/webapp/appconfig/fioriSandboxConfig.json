@@ -1,0 +1,16 @@
+{
+  "defaultRenderer": "fiori2",
+  "applications": {},
+  "bootstrapPlugins": {
+    "KeyUserPlugin": {
+      "component": "sap.ushell.plugins.rta"
+    },
+    "PersonalizePlugin": {
+      "component": "sap.ushell.plugins.rta-personalize"
+    },
+    "LaunchpadPlugin": {
+      "component": "<%= namespace %>.<%= projectName %>",
+      "url": "./"
+    }
+  }
+}

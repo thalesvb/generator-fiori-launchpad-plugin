@@ -1,0 +1,71 @@
+{
+	"_version": "1.5.0",
+	"sap.app": {
+		"_version": "1.2.0",
+		"id": "<%= namespace %>.<%= projectName %>",
+		"type": "component",
+		"applicationVersion": {
+			"version": ""
+		},
+		<% if (backend) { %>
+		"dataSources": {
+			"mainService": {
+				"uri": "<%= backend.path %>",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				}
+			}
+		},
+		<% } %>
+		"title": "{{PLUGIN_TITLE}}"
+	},
+	"sap.ui": {
+		"_version": "1.3.0",
+		"technology": "UI5",
+		"deviceTypes": {
+			"desktop": <%= deviceTypes.desktop %>,
+			"tablet": <%= deviceTypes.tablet %>,
+			"phone": <%= deviceTypes.phone %>
+		},
+		"supportedThemes": []
+	},
+	"sap.ui5": {
+		"_version": "1.1.0",
+		"contentDensities": {
+			"compact": true,
+			"cozy": false
+		},
+		"dependencies": {
+			"minUI5Version": "1.38.1",
+			"libs": {
+				"sap.ui.core": {
+					"minVersion": "1.38.1"
+				},
+				"sap.m": {
+					"minVersion": "1.38.1"
+				}
+			}
+		},
+		"models": {
+			<% if (backend) { %>
+			"": {
+				"dataSource": "mainService",
+				"settings": {
+					"defaultBindingMode": "OneWay"
+				}
+			},
+			<% } %>
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"uri": "i18n/i18n.properties"
+			}
+		},
+		"componentName": "<%= namespace %>.<%= projectName %>"
+	},
+	"sap.flp": {
+		"type": "plugin",
+		"config": {}
+	}
+}
