@@ -1,6 +1,6 @@
 {
   "name": "@thalesvb/generator-fiori-launchpad-plugin",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Humble SAP Fiori Launchpad Plugin generator",
   "homepage": "https://github.com/thalesvb/generator-fiori-launchpad-plugin",
   "author": {
