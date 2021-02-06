@@ -1,6 +1,6 @@
 {
   "name": "@thalesvb/generator-fiori-launchpad-plugin",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "description": "Humble SAP Fiori Launchpad Plugin generator",
   "homepage": "https://github.com/thalesvb/generator-fiori-launchpad-plugin",
   "author": {
@@ -11,6 +11,10 @@
   "files": [
     "generators"
   ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
   "main": "generators/index.js",
   "keywords": [
     "yeoman-generator",
